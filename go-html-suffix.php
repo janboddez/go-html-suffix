@@ -6,6 +6,12 @@
  * Description: Appends '.html' to page URLs.
  * Author: Jan Boddez, WIT Solution
  * Version: 0.1
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @author Jan Boddez [jan@janboddez.be]
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2.0
+ * @package GO_Html_Suffix
  */
 
 /* Prevents this script from being accessed directly. */
