@@ -4,8 +4,7 @@
  * Plugin URI: https://github.com/janboddez/go-html-suffix
  * GitHub PLugin URI: https://github.com/janboddez/go-html-suffix
  * Description: Appends '.html' to page URLs.
- * Author: Jan Boddez
- * Author URI: https://www.janboddez.be/
+ * Author: Jan Boddez, WIT Solution
  * Version: 0.1
  */
 
@@ -13,6 +12,11 @@
 defined( 'ABSPATH' ) or exit;
 
 class GO_Html_Suffix {
+	/**
+	 * Registers hooks.
+	 *
+	 * @since 0.1
+	 */
 	public function __construct() {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -22,6 +26,8 @@ class GO_Html_Suffix {
 
 	/**
 	 * On activation, updates rewrite rules with the new URL structure.
+	 *
+	 * @since 0.1
 	 */
 	public function activate() {
 		global $wp_rewrite;
@@ -33,6 +39,8 @@ class GO_Html_Suffix {
 
 	/**
 	 * On deactivation, restores rewrite rules.
+	 *
+	 * @since 0.1
 	 */
 	public function deactivate() {
 		global $wp_rewrite;
@@ -51,6 +59,8 @@ class GO_Html_Suffix {
 
 	/**
 	 * Ensures page permalinks end in '.html'.
+	 *
+	 * @since 0.1
 	 */
 	public function set_page_permalink() {
 		global $wp_rewrite;
@@ -61,14 +71,16 @@ class GO_Html_Suffix {
 		}
 	}
 
-	/** 
-	 * Filter `user_trailingslashit()` so that trailing slashes are always removed
-	 * from page URLs. (They should end in '.html', remember?)
+	/**
+	 * Filter `user_trailingslashit()` so that trailing slashes are always
+	 * removed from page URLs. (They should end in '.html', remember?)
 	 *
 	 * @param string $string (Part of) the URL to be filtered.
 	 * @param string $type_of_url URL type. Accepts `'page'` and other values.
 	 *
 	 * @return string Filtered URL (i.e., without trailing slash if referring to a page and unaltered otherwise).
+	 *
+	 * @since 0.1
 	 */
 	public function modified_trailingslashit( $string, $type_of_url ) {
 		if ( 'page' === $type_of_url ) {
