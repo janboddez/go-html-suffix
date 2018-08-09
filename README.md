@@ -1,4 +1,4 @@
-# go-html-suffix
+# HTML Suffix
 Append '.html' to WordPress page URLs.
 
 ## Installation and Usage
