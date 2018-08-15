@@ -76,12 +76,12 @@ class GO_Html_Suffix {
 	 * Filter `user_trailingslashit()` so that trailing slashes are always
 	 * removed from page URLs. (They should end in '.html', remember?)
 	 *
+	 * @since 0.1
+	 *
 	 * @param string $string (Part of) the URL to be filtered.
-	 * @param string $type_of_url URL type. Accepts `'page'` and other values.
+	 * @param string $type_of_url URL type. Accepts 'page' and other values.
 	 *
 	 * @return string Filtered URL (i.e., without trailing slash if referring to a page and unaltered otherwise).
-	 *
-	 * @since 0.1
 	 */
 	public function modified_trailingslashit( $string, $type_of_url ) {
 		if ( 'page' === $type_of_url ) {
